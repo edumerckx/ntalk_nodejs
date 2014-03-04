@@ -16,14 +16,14 @@ module.exports = function(app) {
 		},
 		// action show 
 		show: function(req, res) {
-			var id = req.params.id,
+			var id = req.params.id;
 			var contato = req.session.usuario.contatos[id];
 			var params = {contato: contato, id: id};
 			res.render('contatos/show', params);
 		},
 		// action edit
 		edit: function(req, res) {
-			var id = req.param.id;
+			var id = req.params.id;
 			var usuario = req.session.usuario;
 			var contato = usuario.contatos[id];
 			var params = {usuario: usuario, contato: contato, id: id};
